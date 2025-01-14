@@ -6,7 +6,7 @@ import ClientProjectView from "@/components/client-view/project";
 import Image from "next/image";
 
 async function extractAllDatas(currentSection) {
-  const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
+  const res = await fetch(`https://my-next-js-resume.netlify.app/api/${currentSection}/get`, {
     method: "GET",
     cache: "no-store",
   });
