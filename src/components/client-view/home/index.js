@@ -8,6 +8,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaTwitter,
+  FaEnvelope,
 } from "react-icons/fa";
 import Image from "next/image";
 import home from "../../../assets/home.png";
@@ -31,19 +32,15 @@ function variants() {
 
 const socialIcons = [
   {
-    id: "facebook",
+    id: "email",
+    url: "mailto:connectalokkumarsingh@gmail.com",
     icon: (
-      <FaFacebookF color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px]" />
-    ),
-  },
-  {
-    id: "twitter",
-    icon: (
-      <FaTwitter color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px]" />
+      <FaEnvelope color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px]" />
     ),
   },
   {
     id: "linkedin",
+    url: "https://www.linkedin.com/in/alok-singh-40835b11b/",
     icon: (
       <FaLinkedinIn
         color="rgba(13, 183, 96, 1)"
@@ -52,7 +49,15 @@ const socialIcons = [
     ),
   },
   {
+    id: "facebook",
+    url: "https://www.facebook.com/ubuntu.maniac",
+    icon: (
+      <FaFacebookF color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px]" />
+    ),
+  },
+  {
     id: "instagram",
+    url: "https://www.instagram.com/aloksingh2059",
     icon: (
       <FaInstagram color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px]" />
     ),
@@ -95,8 +100,11 @@ export default function ClientHomeView({ data }) {
 
             <motion.div className="flex gap-4">
               {socialIcons.map((item) => (
-                <motion.div
+                <motion.a
                   key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ scale: 0 }}
                   animate={{ rotate: 360, scale: 1 }}
                   transition={{
@@ -110,7 +118,7 @@ export default function ClientHomeView({ data }) {
                   className="cursor-pointer p-2 bg-white rounded-full shadow-lg"
                 >
                   {item.icon}
-                </motion.div>
+                </motion.a>
               ))}
             </motion.div>
           </div>
