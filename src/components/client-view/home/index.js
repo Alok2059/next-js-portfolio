@@ -127,9 +127,9 @@ export default function ClientHomeView({ data }) {
             <motion.div
               drag
               dragConstraints={containerRef}
-              className="w-[400px] h-[400px] relative bg-green-main rounded-lg shadow-2xl"
+              className="w-full max-w-[300px] max-h-[300px] sm:w-[400px] h-[400px] max-w-[400px] max-h-[400px]  relative bg-green-main rounded-lg shadow-2xl"
             >
-              <div className="w-[400px] h-[400px] top-[40px] left-[-30px] rounded-lg border-[6px] border-gray-800 absolute">
+              <div className="w-full max-w-[300px] max-h-[300px] sm:w-[400px] h-[400px] max-w-[400px] max-h-[400px] top-[40px] left-[-30px] rounded-lg border-[6px] border-gray-800 absolute">
                 {" "}
               </div>
               <Image
